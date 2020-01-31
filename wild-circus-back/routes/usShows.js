@@ -10,7 +10,6 @@ router.get('/:id', async(req,res) => {
 
 
 router.get('/', async(req, res) => {
-    const { limit, q, _order, term, _sort, _end, _start } = req.query
     const { count, rows } = await UsShows.findAndCountAll()
     res.header('Access-Control-Expose-Headers', 'X-Total-Count');
     res.header('X-Total-Count', count);
@@ -49,15 +48,15 @@ router.get('/', async(req, res) => {
     
     
 router.post('/', async (req, res) => {
-    const {title, image, description, prix, dateStart, dateEnd} = req.body
-    const NewUsShows =await UsShows.create({title, image, description, prix, dateStart, dateEnd})
+    const {tilte, image, description, prix, dateStart, dateEnd} = req.body
+    const NewUsShows =await UsShows.create({tilte, image, description, prix, dateStart, dateEnd})
     res.send(NewUsShows);
 });
 
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
-    const {title, image, description, prix, dateStart, dateEnd} = req.body;
-    const UpdateUsShows = await UsShows.update({title, image, description, prix, dateStart, dateEnd}, {where: { id }});
+    const {tilte, image, description, prix, dateStart, dateEnd} = req.body;
+    const UpdateUsShows = await UsShows.update({tilte, image, description, prix, dateStart, dateEnd}, {where: { id }});
     res.send(UpdateUsShows);
 
 });

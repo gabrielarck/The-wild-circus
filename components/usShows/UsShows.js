@@ -4,34 +4,54 @@ const moment = require('moment');
 moment.locale('fr');
 
 const UsShows = ({ usShows }) => (
-  <div>
-    <div className="">
+    <div className="spectacles">
       {usShows.map((y) => {
         return (
-          <div className="" key={y.id}>
-            <h1 className="">{y.title}</h1>
-            <p className="">{y.description}</p>
-            <div className="">
-              <p className="">{y.prix}</p>
+          <div className="container-spectacles" key={y.id}>
+            <h1 className="">{y.tilte}</h1>
+            <div className="container-image-spectacles">
+              <img className="image-spectacles" src={y.image}></img>
+            </div>
+              <p className="">{y.description}</p>
+              <p className="">Tarif {y.prix}€</p>
               <div className="">
                   <p className="">
-                    {moment(y.dateStart).format('DD MMMM')}
+                    Du {moment(y.dateStart).format('DD MMMM YYYY')} au {moment(y.dateEnd).format('DD MMMM YYYY')}
                   </p>
                   <p className="">
-                    de
+                    De
                     {' '}
                     {moment(y.dateStart).format('LT')}
                     {' '}
                     à
                     {' '}
-                    {moment(y.DateEnd).format(' HH:mm')}
+                    {moment(y.dateEnd).format("LT")}
                   </p>
                 </div>
-            </div>
           </div>
         );
       })}
-    </div>
+    <style jsx>{`
+      .spectacles{
+        display: flex;
+        background-image: url('https://www.letelegramme.fr/ar/imgproxy.php/images/2019/09/24/le-duo-vitalis-proposera-un-exceptionnel-numero-de-main-a_4820731.jpg?article=12391677&aaaammjj=12391677');
+        color: aliceblue;
+      }
+      .container-image-spectacles{
+        object-fit: cover;
+      }
+      .image-spectacles{
+        width:50%;
+        height:45%;
+        object-fit: cover;
+      }
+      {
+        .container-spectacles{
+          text-align: center;
+        }
+      }
+    `}
+    </style>
   </div>
 );
 

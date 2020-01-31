@@ -13,7 +13,7 @@ const Header = () => (
           <a className="navbar__link" style={linkStyle}>Accueil</a>
         </Link>
         <Link href="/spectacle">
-          <a className="" style={linkStyle}>Spectacles</a>
+          <a className="navbar__link" style={linkStyle}>Spectacles</a>
         </Link>
       </div>
     </nav>

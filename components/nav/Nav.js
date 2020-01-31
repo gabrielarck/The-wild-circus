@@ -4,12 +4,15 @@ import Header from '../Header';
 
 const Nav = () => (
     <div className="Navbar">
-        <Header />
-        <h1>The wild circus</h1>
-    
+        <Header />    
         <style jsx>{`
             .Navbar{
                 display: flex;
+                flex-direction: column-reverse;
+                
+            }
+            .navbar__link{
+                color: color: aliceblue;
             }
 
         `}

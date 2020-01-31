@@ -10,14 +10,21 @@ import UsShows from '../components/usShows/UsShows'
 const Home = ({ usShows }) => (
     <div>
       <Layout>
-       <div>
+       <div className='navBar'>
             <Nav />
-           <h1>the wild circus</h1>
+           <h1>The wild circus</h1>
        </div>
        <div>
            <UsShows usShows={usShows}/>
        </div>
       </Layout>
+      <style jsx>{`
+      {
+          .navBar{
+            color: aliceblue;
+        }
+      }`}
+      </style>
       
     </div>
   );

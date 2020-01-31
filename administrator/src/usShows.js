@@ -1,27 +1,12 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, DateInput,Filter, Pagination } from 'react-admin';
+import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, DateInput } from 'react-admin';
 
 
-const UsShowsPagination = (props) => (
-    <Pagination
-    rowsPerPageOptions= {
-        [
-            5, 10, 25, 50, 100
-        ]
-    }{...props}
-    />
-)
-
-const UsShowsFilter = (props) => (
-    <Filter {...props}>
-        <TextInput label="Search" source="q" alwaysOn />
-    </Filter>
-);
 export const UsShowsList = (props) => (
-    <List filters={<UsShowsFilter />} {...props} pagination={<UsShowsPagination />}>
+    <List {...props} >
         <Datagrid>
             <TextField source="id" />
-            <TextField source="title" />
+            <TextField source="tilte" />
             <TextField source="description" />
             <TextField source="prix" />
             <TextField source="dateStart" />
@@ -35,15 +20,15 @@ export const UsShowsList = (props) => (
     </List>
 );
 
-const UsShowsTitle = ({ record }) => {
-    return <span>Post {record ? `"${record.title}"` : ''}</span>;
+const UsShowsTilte = ({ record }) => {
+    return <span>Post {record ? `"${record.tilte}"` : ''}</span>;
 };
 
 export const UsShowsEdit = (props) => (
-    <Edit title={<UsShowsTitle />} {...props}>
+    <Edit tilte={<UsShowsTilte />} {...props}>
         <SimpleForm>
             <TextInput source="id" />
-            <TextInput source="title" />
+            <TextInput source="tilte" />
             <TextInput source="description" options={{ multiLine: true }}/>
             <TextInput source="prix" />
             <TextInput source="dateStart" />
@@ -57,9 +42,9 @@ export const UsShowsEdit = (props) => (
 );
 
 export const UsShowsCreate = (props) => (
-    <Create title="Create a UsShows" {...props}>
+    <Create tilte="Create a UsShows" {...props}>
         <SimpleForm>
-            <TextInput source="title" />
+            <TextInput source="tilte" />
             <TextInput source="description" options={{ multiLine: true }}/>
             <TextInput source="prix" />
             <TextInput source="dateStart" />
