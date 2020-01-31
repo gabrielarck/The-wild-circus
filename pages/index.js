@@ -13,6 +13,7 @@ const Home = ({ usShows }) => (
        <div className='navBar'>
             <Nav />
            <h1>The wild circus</h1>
+           <a href="http://localhost:3001">clique ici boy</a>
        </div>
        <div>
            <UsShows usShows={usShows}/>
@@ -21,7 +22,7 @@ const Home = ({ usShows }) => (
       <style jsx>{`
       {
           .navBar{
-            color: aliceblue;
+            text-align: center;
         }
       }`}
       </style>
