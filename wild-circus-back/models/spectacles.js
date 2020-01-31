@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     prix: DataTypes.INTEGER,
     image: DataTypes.STRING,
-    dateStart: DataTypes.INTEGER,
-    dateEnd: DataTypes.INTEGER
+    dateStart: DataTypes.STRING,
+    dateEnd: DataTypes.STRING
   }, {});
   Spectacles.associate = function(models) {
     // associations can be defined here

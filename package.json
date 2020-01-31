@@ -1,5 +1,5 @@
 {
-  "name": "wildcircusFront",
+  "name": "wildcircusfront",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,8 +11,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.24.0",
     "next": "^9.2.1",
     "react": "^16.12.0",
     "react-admin": "^3.1.3",

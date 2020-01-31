@@ -5,7 +5,7 @@ import Head from 'next/head';
 const Layout = ({children}) => (
   <div>
     <Head>
-      <title>La Sauce Numérique</title>
+      <title>The wild circus</title>
       <meta charSet="UTF-8" />
       <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
       <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />

@@ -1,26 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Admin, Resource } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
+import authProvider from './authProvider';
+import GroupWorkIcon from '@material-ui/icons/GroupWork';
+import { UsShowsList, UsShowsEdit, UsShowsCreate } from './usShows';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+const App = () => (
+  <div className="App">
+    <Admin  authProvider={authProvider} dataProvider={jsonServerProvider("http://localhost:5000/api/v1")}>
+        <Resource name="usShows" list={UsShowsList} edit={UsShowsEdit} create={UsShowsCreate} icon={GroupWorkIcon}/>
+    </Admin>
+  </div>
+);
 export default App;
